@@ -1,0 +1,185 @@
+<!--DOCTYPE html-->
+
+<html>
+
+<head>
+	<title>Roulette</title>
+	<link rel="stylesheet" href="test.css">
+	<link rel="stylesheet" href="style.css">
+</head>
+
+
+
+
+<body style="background-color: rgba(167, 161, 161, 0.85)">
+	<div class="container">
+		<section id="roulette">
+			<h1 id="realh1">The Game of Roulette</h1>
+			<div class="rules">
+				<a href="#Rules" id="rules12345">Rules</a>
+			</div>
+
+			<canvas id="wheelcanvas" width="300" height="300"></canvas>
+			<button type="button" onclick="spin()"
+				style="font-family: fantasy; margin: 4px; width: 50px; height: 50px; background-color: rgb(197, 25, 25); font-size: 15px; border-radius: 50%;">Start</button>
+			<button type="button" onclick="clean()"
+				style="font-family: fantasy; margin: 4px; width: 50px; height: 50px; background-color: rgb(197, 25, 25); font-size: 15px; border-radius: 50%;">Clear</button>
+
+
+			<div class="num_table" style="position: absolute; top: 145px; left: 500px;">
+				<!-- 位置更改 -->
+
+				<table class="number">
+					<tr id="first_row">
+						<td rowspan="3" id="0" onclick="putmoney(this)" style="background-color:green">0</td>
+					</tr>
+					<tr id="second_row"></tr>
+					<tr id="third_row"></tr>
+
+
+					<tr id="fourth_row">
+						<td height="5px" rowspan="2" style="background-color:rgb(0, 99, 0)"></td>
+						<td height="5px" id="1st" onclick="putmoney_other(this)" colspan="4"
+							style="background-color:green">
+							1st
+							12</td>
+						<td height="5px" id="2nd" onclick="putmoney_other(this)" colspan="4"
+							style="background-color:green">
+							2nd
+							12</td>
+						<td height="5px" id="3rd" onclick="putmoney_other(this)" colspan="4"
+							style="background-color:green">
+							3rd
+							12</td>
+						<td height="5px" rowspan="2" style="background-color:rgb(0, 99, 0)"></td>
+					</tr>
+
+					<tr id="fifth_row">
+						<td height="5px" id="1_to_18" onclick="putmoney_other(this)" colspan="2"
+							style="background-color:green">
+							1 to 18</td>
+						<td height="5px" id="put_even" onclick="putmoney_other(this)" colspan="2"
+							style="background-color:green">EVEN</td>
+						<td height="5px" id="color_red" onclick="putmoney_other(this)" colspan="2"
+							style="background-color:red;">RED</td>
+						<td height="5px" id="color_black" onclick="putmoney_other(this)" colspan="2"
+							style="background-color:black;">BLACK</td>
+						<td height="5px" id="put_odd" onclick="putmoney_other(this)" colspan="2"
+							style="background-color:green">
+							ODD</td>
+						<td height="5px" id="19_to_36" onclick="putmoney_other(this)" colspan="2"
+							style="background-color:green">19 to 36</td>
+					</tr>
+				</table>
+
+			</div>
+
+			<div id="box" style=" position: absolute; top: 490px;"></div> <!-- 投注表 -->
+			<div id="box2" style=" position: absolute; top: 490px; left:250px;"></div>
+
+
+			<input type="button" id="del" value="REMOVE" style="position: absolute; top: 600px; left: 180px" />
+			<!-- 刪除數字 -->
+
+			<input type="button" id="del2" value="REMOVE" style="position: absolute; top: 600px; left: 410px" />
+			<!-- 刪除除了數字 -->
+
+
+			<p id="money" style="position: absolute; top: 400px; left: 900px;">剩餘金額: </p>
+			<p id="putmoney" style="position: absolute; top: 400px; left: 600px;">已投注: </p>
+
+
+			<!-- 籌碼 -->
+			<button type="button" onclick="selectCoin(this)" id="coin10"
+				style="font-family: fantasy; margin: 4px; width: 80px; height: 80px; background-color: rgb(204, 204, 204); font-size: 40px; border-radius: 50%;position: absolute; top: 500; left: 550;   border: 3px solid black;">10</button>
+			<button type="button" onclick="selectCoin(this)" id="coin25"
+				style="font-family: fantasy; margin: 4px; width: 80px; height: 80px; background-color: rgb(204, 204, 204); font-size: 40px; border-radius: 50%;position: absolute; top: 500; left: 650;  border:none;">25</button>
+			<button type="button" onclick="selectCoin(this)" id="coin50"
+				style="font-family: fantasy; margin: 4px; width: 80px; height: 80px; background-color: rgb(204, 204, 204); font-size: 40px; border-radius: 50%;position: absolute; top: 500; left: 750;   border: none;">50</button>
+
+			<script src="index.js"></script>
+		</section>
+
+		<br><br>
+		<section id="Rules" class="rules1">
+			<div id="styleofp">
+				<h1>The Basics: Understanding the Rules of Roulette</h1>
+				<p>The rules of roulette are quite straightforward. In this game, you have a wheel that features red and
+					black
+					slots that have the numbers from 1 to 36 on them, and one or two green zero slots – depending on
+					whether
+					you’re playing European single zero roulette or American double-zero roulette. The American Roulette
+					wheel
+					features 0 and 00 pockets. The inclusion of this extra double zero pocket increases the house edge.
+					Except
+					for the wheel, you have a roulette table that features the numbers and several additional sectors on
+					which
+					you can place bets.</p>
+				<p>After all the participants in the game have placed their bets on the table, the dealer spins the
+					wheel
+					and
+					throws in a small ball. The number of the slot the ball lands in is the winning number. If you have
+					bet
+					on
+					that single number or on a group of numbers that contain it, then you’ll get a payout.</p>
+				<p>According to the type of roulette game you’re playing, be it double zero American Roulette games or
+					French
+					Roulette games the lowest house edge, there might be some differences in the roulette table and
+					wheel
+					layouts, but that’s nothing to worry about as it doesn’t impact in any way the outcome of the game.
+					However,
+					something important to know is the type of bets you can place when playing roulette. Let’s take a
+					closer
+					look at them. But before that, we will give you few very useful tips about roulette gameplay.</p>
+				<h1>Types of Roulette Bets</h1>
+				<p>In roulette, you can place bets on a single number or different groups of numbers. There are many
+					betting
+					combinations all of which bring you different odds for winning and different payouts for winning
+					bets.
+					The
+					more numbers you bet on, the bigger your chances for a win and, therefore, the lower the payouts
+					that
+					the
+					game offers. Other than that, when it comes to knowing how does roulette work, you should know that
+					all
+					roulette bets are divided into three main categories: inside bets, outside bets, and announced bets.
+				</p>
+				<p>The first two categories are the basic ones offered by all roulette games and that you should
+					definitely
+					know
+					inside out. In contrast, the third is more advanced and featured only in select roulette variants.
+					If
+					you
+					don’t feel confident placing bets at first, make sure to claim one of the roulette bonus offers
+					available to
+					UK players. Now let’s start with the basic roulette bets, and I’ll leave it up to you if you want to
+					continue learning more about the advanced ones.</p>
+			</div>
+
+			<div>
+				<a href="https://www.roulettesites.org/rules/" id="link123">For more, click the link</a>
+			</div>
+
+
+		</section>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script>//scolling effect: smooth
+		$('.rules a').on('click', function (e) {
+			if (this.hash !== '') {
+				e.preventDefault();
+
+				const hash = this.hash;
+
+				$('html, body')
+					.animate({
+						scrollTop: $(hash).offset().top
+					}, 800);
+			}
+		});
+	</script>
+
+</body>
+
+</html>

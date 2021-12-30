@@ -1,0 +1,69 @@
+.container {
+    width: 100%;
+    height: 100%;
+}
+
+#rules12345 {
+    text-decoration: none;
+    position: absolute;
+    right: 10vh;
+    top: 7vh;
+    font-size: 6vh;
+    color: black;
+    font-weight: bold;
+    background-color: springgreen;
+    padding: 3px;
+}
+
+#rules12345:hover {
+    color: rgb(228, 145, 37);
+    background-color: white;
+}
+
+#roulette {
+    width: 100%;
+    height: 110vh;
+}
+
+#rules1 {
+    width: 100%;
+    height: 100vh;
+    font-family: fantasy;
+    text-align: center;
+    justify-content: center;
+
+}
+
+#styleofp {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 3vh;
+}
+
+#styleofp h1 {
+    font-size: 7vh;
+    text-align: center;
+}
+
+#styleofp p {
+    font-size: 4vh;
+}
+
+#link123 {
+    text-decoration: none;
+    font-size: 4vh;
+    color: black;
+    font-weight: bold;
+    background-color: springgreen;
+    padding-left: 5vh;
+}
+
+#link123:hover {
+    color: rgb(228, 145, 37);
+    background-color: white;
+}
+
+body {
+    height: 100vh;
+    line-height: 1.6;
+
+}
